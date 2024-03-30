@@ -16,12 +16,12 @@
                 <li class="nav-item">
                     <a class="nav-link @if ($title === "Main") 
                     active
-                    @endif" href="dev">Main</a>
+                    @endif" href="{{ url('dev') }}">Main</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if ($title === "Home") 
                     active
-                    @endif" href="home">Home</a>
+                    @endif" href="{{ url('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if ($title === "") 
