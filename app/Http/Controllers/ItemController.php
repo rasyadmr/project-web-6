@@ -14,10 +14,10 @@ class ItemController extends Controller
         ]);
     }
 
-    public function show($id) {
+    public function show(Item $item) {
         return view('item', [
             "title" => "Item Details",
-            "item" => Item::findById($id)
+            "item" => $item
         ]);
     }
 }

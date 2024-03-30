@@ -44,7 +44,7 @@ Route::get('/home', function() {
 });
 
 Route::get('item', [ItemController::class, 'index']);
-Route::get('item/{id}', [ItemController::class, 'show']);
+Route::get('item/{item:slug}', [ItemController::class, 'show']); // By default, laravel will take id as route key. Need to specify column 'slug' as our route key.
 
 // $user = [
 //     "username" => 'rasyadmr',
