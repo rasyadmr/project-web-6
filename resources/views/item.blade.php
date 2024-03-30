@@ -1,8 +1,4 @@
-@extends('layouts\home')
-
-@section('image')
-    {{ asset($user['image']) }}
-@endsection
+@extends('layouts\main')
 
 @section('content')
 <div class="container">

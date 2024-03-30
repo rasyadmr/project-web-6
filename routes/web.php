@@ -37,39 +37,25 @@ Route::get('/register', function() {
 });
 
 Route::get('/home', function() {
-    $user = [
-        "username" => 'rasyadmr',
-        "image" => './images/rasyadmr.jpg',
-    ];
-
     return view('home', [
         "title" => "Home",
-        "user" => $user
     ]);
 });
 
 Route::get('item', function () {
-    $user = [
-        "username" => 'rasyadmr',
-        "image" => './images/rasyadmr.jpg',
-    ];
-
     return view('items', [
-        "title" => "Items",
-        "user" => $user,
         "items" => Item::all()
     ]);
 });
 
 Route::get('item/{id}', function($id) {
-    $user = [
-        "username" => 'rasyadmr',
-        "image" => './images/rasyadmr.jpg',
-    ];
+    // $user = [
+    //     "username" => 'rasyadmr',
+    //     "image" => './images/rasyadmr.jpg',
+    // ];
 
     return view('item', [
         "title" => "Item Details",
-        "user" => $user,
         "item" => Item::findById($id)
     ]);
 });
