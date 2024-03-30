@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Models\Item;
 use Illuminate\Support\Facades\Route;
 
@@ -42,20 +43,10 @@ Route::get('/home', function() {
     ]);
 });
 
-Route::get('item', function () {
-    return view('items', [
-        "items" => Item::all()
-    ]);
-});
+Route::get('item', [ItemController::class, 'index']);
+Route::get('item/{id}', [ItemController::class, 'show']);
 
-Route::get('item/{id}', function($id) {
-    // $user = [
-    //     "username" => 'rasyadmr',
-    //     "image" => './images/rasyadmr.jpg',
-    // ];
-
-    return view('item', [
-        "title" => "Item Details",
-        "item" => Item::findById($id)
-    ]);
-});
+// $user = [
+//     "username" => 'rasyadmr',
+//     "image" => './images/rasyadmr.jpg',
+// ];
