@@ -19,4 +19,8 @@ class Item extends Model
     protected $guarded = [ // Mass assignment (insert data except registered columns)
         'id'
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ItemController;
 use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,9 +44,21 @@ Route::get('/home', function() {
     ]);
 });
 
-Route::get('item', [ItemController::class, 'index']);
-Route::get('item/{item:slug}', [ItemController::class, 'show']); // By default, laravel will take id as route key. Need to specify column 'slug' as our route key.
+Route::get('/item', [ItemController::class, 'index']);
+Route::get('/item/{item:slug}', [ItemController::class, 'show']); // By default, laravel will take id as route key. Need to specify column 'slug' as our route key.
 
+Route::get('/categories', function() {
+    return view("categories", [
+        "title" => "Item Categories",
+        "categories" => Category::all()
+    ]);
+});
+Route::get('/category/{category:slug}', function(Category $category) {
+    return view('category', [
+        "title" => $category->name,
+        "items" => $category->item
+    ]);
+});
 // $user = [
 //     "username" => 'rasyadmr',
 //     "image" => './images/rasyadmr.jpg',

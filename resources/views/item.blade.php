@@ -10,7 +10,8 @@
         </div>
         <div class="col-md-6">
             <h1 class="">{{ $item->name }}</h1>
-            <p>{!! $item->description !!}</p>
+            <span class="text-muted">Category: </span> <a href="/category/{{ $item->category->slug }}"><span class="badge rounded-pill text-bg-secondary">{{ $item->category->name }}</span></a>
+            <p class="my-2">{!! $item->description !!}</p>
             <a href="" type="button" class="btn btn-primary mt-3" >Buy</a>
         </div>
     </div>
