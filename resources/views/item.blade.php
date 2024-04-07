@@ -10,6 +10,8 @@
         </div>
         <div class="col-md-6">
             <h1 class="">{{ $item->name }}</h1>
+            <a href="/store/{{ $item->user->username }}" class="text-decoration-none fs-5">{{ $item->user->name }}</a>
+            <br>
             <span class="text-muted">Category: </span> <a href="/category/{{ $item->category->slug }}"><span class="badge rounded-pill text-bg-secondary">{{ $item->category->name }}</span></a>
             <p class="my-2">{!! $item->description !!}</p>
             <a href="" type="button" class="btn btn-primary mt-3" >Buy</a>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->longText('description')->nullable();
             $table->foreignId('category_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

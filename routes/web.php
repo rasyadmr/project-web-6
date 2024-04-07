@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItemController;
+use App\Models\User;
 use App\Models\Item;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -59,7 +60,10 @@ Route::get('/category/{category:slug}', function(Category $category) {
         "items" => $category->item
     ]);
 });
-// $user = [
-//     "username" => 'rasyadmr',
-//     "image" => './images/rasyadmr.jpg',
-// ];
+
+Route::get('/store/{user:username}', function(User $user) {
+    return view('items', [
+        "title" => "User Store",
+        "items" => $user->item
+    ]);
+});
