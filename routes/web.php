@@ -49,21 +49,21 @@ Route::get('/item', [ItemController::class, 'index']);
 Route::get('/item/{item:slug}', [ItemController::class, 'show']); // By default, laravel will take id as route key. Need to specify column 'slug' as our route key.
 
 Route::get('/categories', function() {
-    return view("categories", [
+    return view("items", [
         "title" => "Item Categories",
-        "categories" => Category::all()
+        "items" => Item::all()
     ]);
 });
 Route::get('/category/{category:slug}', function(Category $category) {
-    return view('category', [
-        "title" => $category->name,
-        "items" => $category->item
+    return view('items', [
+        "title" => "Item by Category: $category->name",
+        "items" => $category->item->load('category', 'user')
     ]);
 });
 
 Route::get('/store/{user:username}', function(User $user) {
     return view('items', [
-        "title" => "User Store",
-        "items" => $user->item
+        "title" => "Item by User Store: $user->name",
+        "items" => $user->item->load('category', 'user')
     ]);
 });

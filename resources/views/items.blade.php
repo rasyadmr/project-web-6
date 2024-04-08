@@ -2,7 +2,16 @@
 
 @section('content')
 <div class="container">
-    <h1 class="py-5 text-center">Store page</h1>
+    @if ($title !== "All Items")
+    <div class="back-link mt-3">
+        <a href="/item">
+            <span class="fa fa-arrow-circle-o-left"></span> All Items
+        </a>
+    </div>
+    @endif
+
+    <h1 class="py-3 text-center">{{ $title }}</h1>
+    <hr/>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         @foreach ($items as $item)

@@ -9,8 +9,8 @@ class ItemController extends Controller
 {
     public function index() {
         return view('items', [
-            "title" => "Items",
-            "items" => Item::all()
+            "title" => "All Items",
+            "items" => Item::with(['user', 'category'])->get() // N+1 problem solved
         ]);
     }
 
