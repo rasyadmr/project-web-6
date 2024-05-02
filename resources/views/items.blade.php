@@ -17,7 +17,7 @@
         @foreach ($items as $item)
         <div class="col">
             <div class="card" style="height: 70vh">
-                <img src="https://placehold.co/400x200.png" class="card-img-top" alt="" style="height: 150px;"/>
+                <img src="./assets/images/mega.jpg" class="card-img-top" alt="" style="height: 150px;"/>
                 <div class="card-body">
                     <a href="/store/{{ $item->user->username }}" class="text-decoration-none">{{ $item->user->name }}</a>
                     <h5 class="card-title mb-0">{{ $item->name }}</h5>

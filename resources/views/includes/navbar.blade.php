@@ -16,7 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link @if ($title === "Main") 
                     active
-                    @endif" href="{{ url('dev') }}">Main</a>
+                    @endif" href="{{ url('/') }}">Main</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if ($title === "Home") 
@@ -24,15 +24,15 @@
                     @endif" href="{{ url('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @if ($title === "") 
+                    <a class="nav-link @if ($title === "All Items") 
                     active
-                    @endif disabled" href="#" aria-disabled="true">Dummy</a>
+                    @endif" href="/item">Items</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Others</a>
                     <ul class="dropdown-menu">
                     <li>
-                        <a class="dropdown-item" href="#">Dummy</a>
+                        <a class="dropdown-item" href="/categories">Category</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="#">Dummy</a>
