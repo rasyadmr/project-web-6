@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Item
+class _Item
 {
     private static $items = [
         [

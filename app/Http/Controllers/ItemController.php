@@ -10,7 +10,7 @@ class ItemController extends Controller
     public function index() {
         return view('items', [
             "title" => "All Items",
-            "items" => Item::with(['user', 'category'])->get() // N+1 problem solved
+            "items" => Item::get() // N+1 problem solved
         ]);
     }
 

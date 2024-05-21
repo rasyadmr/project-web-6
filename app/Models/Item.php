@@ -20,6 +20,11 @@ class Item extends Model
         'id'
     ];
 
+    protected $with = [ // N+1 Problem Solved
+        'user',
+        'category'
+    ];
+
     public function category() {
         return $this->belongsTo(Category::class);
     }

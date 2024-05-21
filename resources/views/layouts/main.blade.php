@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
     </head>
     <body>
-        @include('includes.guest.navbar')
+        @include('includes.navbar')
 
         @yield('content')
 
